@@ -1,0 +1,4 @@
+Label,# Samples,Average,Min,Max,Std. Dev.,Error %,Throughput,Received KB/sec,Sent KB/sec,Avg. Bytes
+MVC,2500,105,95,155,7.12,0.000%,180.345,30.45,22.35,185.0
+WebFlux,2500,102,90,130,5.87,0.000%,340.678,60.12,45.21,190.0
+TOTAL,5000,103,90,155,6.45,0.000%,520.123,90.57,67.56,187.5

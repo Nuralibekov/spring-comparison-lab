@@ -2,7 +2,7 @@ package com.Nuralibekov.spring_comparison_lab.spring_comparison_lab.config;
 
 import org.springframework.boot.web.embedded.netty.NettyReactiveWebServerFactory;
 import org.springframework.boot.web.embedded.tomcat.TomcatServletWebServerFactory;
-import org.springframework.boot.web.server.WebServerFactoryCustomizer;
+import org.springframework.boot.web.server.WebServerFactory;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
@@ -10,13 +10,16 @@ import org.springframework.context.annotation.Configuration;
 public class DualServerConfig {
 
     @Bean
-    public WebServerFactoryCustomizer<TomcatServletWebServerFactory> mvcServer() {
-        return factory -> factory.setPort(8080); // Tomcat для MVC
+    public TomcatServletWebServerFactory tomcatServletWebServerFactory() {
+        TomcatServletWebServerFactory tomcatFactory = new TomcatServletWebServerFactory();
+        tomcatFactory.setPort(8081); // Tomcat для MVC
+        return tomcatFactory;
     }
 
-
     @Bean
-    public WebServerFactoryCustomizer<NettyReactiveWebServerFactory> webfluxServer() {
-        return factory -> factory.setPort(8081); // Netty для WebFlux
+    public NettyReactiveWebServerFactory nettyReactiveWebServerFactory() {
+        NettyReactiveWebServerFactory nettyFactory = new NettyReactiveWebServerFactory();
+        nettyFactory.setPort(8080); // Netty для WebFlux
+        return nettyFactory;
     }
 }
