@@ -1,0 +1,4 @@
+Label,# Samples,Average,Min,Max,Std. Dev.,Error %,Throughput,Received KB/sec,Sent KB/sec,Avg. Bytes
+ MVC,2000,109,100,159,6.86,0.000%,167.04251,28.87,20.55,177.0
+webflux,2000,109,100,126,4.02,0.000%,328.78514,58.12,41.74,181.0
+TOTAL,4000,109,100,159,5.62,0.000%,331.07101,57.87,41.38,179.0
